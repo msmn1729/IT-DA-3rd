@@ -24,3 +24,5 @@ for i in list(graph.get(1)):
 invite.remove(1)
 
 print(len(invite))
+
+# Tree 모형인줄 알았는데..아니넹
