@@ -47,8 +47,8 @@ int main(void)
     double result = dfs(14, 14, moveCount);
 
     cout << fixed;
-	cout.precision(10);
-	cout << result << endl;
+    cout.precision(10);
+    cout << result << endl;
 
     return 0;
 }
