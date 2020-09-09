@@ -8,12 +8,32 @@
 using namespace std;
 
 int n, m;
-int arr[501][501];
+//int arr[501][501];
 int visit[501];
 vector<int> v[501];
-queue<pair<int, int>> ring;
-//결혼식
-//자꾸 틀리다고나오는데 이유를 모르겠어서 고쳐야함
+
+void bfs(int start)
+{
+  visit[start] = 1;
+  queue<int> q;
+  q.push(start);
+
+  while (!q.empty())
+  {
+    int now = q.front();
+    q.pop();
+
+    for (int i = 0; i < v[now].size(); i++)
+    {
+      int next = v[now][i]; //현재 탐색하는 노드랑 연결된곳
+      if (visit[next] == 0) //연결된 노드가 방문하지 않았다면
+      {
+        visit[next] = visit[now] + 1; //연결점 하나차이이므로 +1
+        q.push(next);
+      }
+    }
+  }
+}
 
 int main()
 {
@@ -24,42 +44,19 @@ int main()
   {
     int a, b;
     cin >> a >> b;
-    v[a].push_back(b);
+    v[a].push_back(b); //양쪽모두 연결 표시
     v[b].push_back(a);
   }
-  visit[1] = 1; //1은 항상방문
 
-  for (int i = 0; i < v[1].size(); i++)
+  visit[1] = 1;
+  bfs(1); //시작점 1번과 연결점 0번(자기자신)
+
+  int ans = 0;
+  for (int i = 2; i <= n; i++)
   {
-    ring.push(make_pair(v[1][i], 1)); //1과 연결된 점을 저장
+    if (visit[i] == 2 || visit[i] == 3)
+      ans++;
   }
 
-  int cnt = 0;
-  while (!ring.empty())
-  {
-    int now = ring.front().first;
-    int stair = ring.front().second;
-
-    if (stair == 3)
-      break;
-    if (visit[now] == 1) //이미 방문한 지점이라면
-    {
-      ring.pop();
-      continue;
-    }
-
-    else
-    {
-      cnt++;
-      visit[now] = 1;
-      ring.pop();
-
-      for (int i = 0; i < v[now].size(); i++)
-      {
-        int next = v[now][i];
-        ring.push(make_pair(next, ++stair)); //연결된 단계와 함께 넘기기
-      }
-    }
-  }
-  cout << cnt << endl;
+  cout << ans << endl;
 }
