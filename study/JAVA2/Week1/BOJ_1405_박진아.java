@@ -48,138 +48,57 @@ public class Q1405 {
  *  그 후 동서남북 확률 모두 더하면 되지 않나  
  *  
  */
-	
-	static int dx[]= {-1,0,0,1}, dy[]= {0,-1,1,0};
-	static int n;
-	static Direction E;
-	static Direction W;
-	static Direction S;
-	static Direction N;
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String input[] =br.readLine().split(" ");
-		long result=0;
-		int map [][] = new int [15][15];
-		
-		n = Integer.parseInt(input[0]);
-		long Epercent = Integer.parseInt(input[1])/100;
-		long Wpercent = Integer.parseInt(input[2])/100;
-		long Spercent = Integer.parseInt(input[3])/100;
-		long Npercent = Integer.parseInt(input[4])/100;
-		
-		 E = new Direction('E',Epercent);
-		 W = new Direction('W',Wpercent);
-		 S = new Direction('S',Spercent);
-		 N = new Direction('N',Npercent);
-		
-		
-		int depth=0; long tresult =1; int x =0; int y=0;
-		map[0][0]=1;
-		
-		result += dfs(E,depth,map,tresult,x,y);
-		result += dfs(W,depth,map,tresult,x,y);
-		result += dfs(S,depth,map,tresult,x,y);
-		result += dfs(N,depth,map,tresult,x,y);
-		
-		System.out.println(result);
-		
-		
-	}
+static int dx[]= {1,-1,0,0}, dy[]= {0,0,-1,1};
+static int n;
+static Double percent[] = new Double[4];
+static int [][] map = new int[100][100];
+static double result=0;
 
-	private static long dfs(Direction e, int depth, int map[][], long result, int x, int y) {
-		if(depth==n) {
-			return result;
-		}
-		depth++;
-		Postion postion = returnPostion(e);
-		x += postion.x;
-		y += postion.y;
-		map[y][x]=1;
-		
-		long percent = e.percent;
-		result =  result * percent;
-		
-		for(int i=0;i<4;i++) {
-			int nextx=x+dx[i];
-			int nexty=y+dy[i];
-			
-			if(0<=nextx && nextx<map.length && 0<=nexty && nexty<map.length) {
-				if(map[nexty][nextx]==0) {
-					dfs(nextDirection(nextx,nexty), depth, map, result, nextx, nexty);
-				}
-			}
-		}
-		
-		
-		
-		
-		return 0;
-	}
+public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String input[] =br.readLine().split(" ");
+    boolean visited [][] = new boolean[14][14];
+    
+    n = Integer.parseInt(input[0]);
+    
+    for(int i=0;i<4;i++) {
+        percent[i]=Double.parseDouble(input[i+1])*0.01;
+        System.out.println(percent[i]);
+    }
+    
+    System.out.println("done");
+    int depth=1; int x =50; int y=50; 
+    double tmp=1;
 
-	
-	private static Direction nextDirection(int x, int y) {
-		Direction direction =null;
-		
-		if(x==1&&y==0) {
-			direction = E;
-		}
-		if(x==-1&&y==0) {
-			direction = W;
-		}
-		if(x==0&&y==-1) {
-			direction = S;
-		}
-		if(x==0&&y==1) {
-			direction = N;
-		}
-		
-		return direction;
-		
-	}
-	
-	private static Postion returnPostion(Direction e) {
-		char nextDirection = e.direction;
-		Postion position = new Postion(0,0);
-		switch (nextDirection) {
-			case 'E':
-				position.x=1;
-				position.y=0;
-				return position;
-			case 'W':
-				position.x=-1;
-				position.y=0;
-				return position;
-			case 'S':
-				position.x=0;
-				position.y=-1;
-				return position;
-			case 'N':
-				position.x=0;
-				position.y=1;
-				return position;
-		}
-		return null;
-	}
+    dfs(depth,x,y,tmp);
+    
+    System.out.println(result);
 }
-	
-	class Postion{
-		int x;
-		int y;
-		
-		public Postion(int x, int y) {
-			this.x =x;
-			this.y=y;
-		}
-	}
-	
-	class Direction{
-		char direction;
-		long percent;
-		
-		public Direction(char direction, long percent) {
-			this.direction = direction;
-			this.percent = percent;
-		}
-	}
-	
+
+private static void dfs(int depth, int x, int y, double tmp) {
+    if(depth == n) {
+        System.out.println("depth==n");
+        result= result+tmp;
+        return;
+    }
+    System.out.println("depth: "+depth);
+    map[y][x]=1;
+    
+    // 동서남북 순서로 반복문 
+    for(int i=0;i<4;i++) {
+        int nextx= x+dx[i];
+        int nexty= y+dy[i];
+        
+        System.out.println(nextx+" "+nexty);
+        
+        if(map[nexty][nextx]==0) {
+            double p = percent[i];
+            depth+=1;
+            dfs(depth,nextx,nexty,tmp*p);
+        }
+        
+        
+    }
+    
+}
+}
