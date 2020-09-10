@@ -1,20 +1,32 @@
 #include<iostream>
 using namespace std;
-//a,b가 입력될때 a<b일때만 정상적인 값이 나옴 그 반대일때는 제대로된 값이 나오지 않음
+//a<b일때만 작동되기 때문에 입력 받을때 a<b가 되게 강제함
 int main(void) {
 	int n, m;
 	int fri[501][500] = { {0} };
 	int f, s, j, count = 0, i, k = 0;
 	int tmp[500] = { 0 }, tmp2[500] = { 0 };
+	int tmp1, t = 0;
 	cin >> n;
 	cin >> m;
 	for (i = 0; i < m; i++) {
 		j = 0;
 		cin >> f >> s;
+		if (f > s) {
+			tmp1 = f;
+			f = s;
+			s = tmp1;
+		}t = 1;
 		while (fri[f][j] != 0) {
+			if (fri[f][j] == s) {
+				t = 0;
+				break;
+			}
 			j++;
 		}
-		fri[f][j] = s;
+		if (t) {
+			fri[f][j] = s;
+		}
 	}
 	j = 0;
 	f = 0;
