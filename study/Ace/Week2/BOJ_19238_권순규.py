@@ -24,7 +24,7 @@ startTaxi = [0,0]
 dx, dy = [1,-1,0,0],[0,0,-1,1]
 
 def nextGuest(): # 다음 승객의 좌표 반환
-    global startTaxi, fuel, guest, _visited
+    global startTaxi, guest, _visited
     
     visited = deepcopy(_visited)
     
@@ -32,14 +32,14 @@ def nextGuest(): # 다음 승객의 좌표 반환
     for i in guest: # 처음에 택시와 승객들간의 거리를 -1로 초기화
         i[2] = -1
     
-    q = deque([[startTaxi[0], startTaxi[1], fuel, 0]]) # 마지막 원소는 이동 거리
+    q = deque([[startTaxi[0], startTaxi[1], 0]]) # 마지막 원소는 이동 거리
     visited[startTaxi[0]][startTaxi[1]] = True
     
     while q:
-        y, x, f, d = q.popleft()
+        y, x, d = q.popleft()
         
-        for i,g in enumerate(guest):
-            if y == g[0] and x == g[1] and fuel>=0:
+        for g in guest:
+            if y == g[0] and x == g[1]:
                 g[2] = d
                 flag = True
                 break
@@ -51,17 +51,13 @@ def nextGuest(): # 다음 승객의 좌표 반환
                 continue
             if not visited[ny][nx] and Map[ny][nx] == 0:
                 visited[ny][nx] = True
-                q.append([ny,nx,f-1,d+1])
+                q.append([ny,nx,d+1])
     
     if not flag:
         return [-1, -1, -1, -1]
     else:
-        guest.sort(key=lambda x:(x[2],x[0],x[1])) #거리, 행, 열순으로 오름차순 정렬
-        guest.reverse() # pop하기 위해서 리버스 시킨다.
-        # print(guest)
-        answer = guest[-1]
-        guest.pop() # 태운 승객은 반드시 pop하여 삭제해야 한다.
-        return answer
+        guest.sort(key=lambda x:(-x[2],-x[0],-x[1])) #거리, 행, 열순으로 내림차순 정렬
+        return guest.pop() # 태운 승객은 반드시 pop하여 삭제해야 한다.
         
 def bfs():
     global _visited, fuel,startTaxi, destination
@@ -114,7 +110,7 @@ if __name__ == "__main__":
     startTaxi[1] -= 1
     for i in range(M):
         tmp = list(map(int,input().split()))
-        guest.append([tmp[0]-1,tmp[1]-1, -1, i])
+        guest.append([tmp[0]-1,tmp[1]-1, -1, i]) # 마지막에 i를 삽입한 이유는 destination 인덱스와 매칭하기 위함
         destination.append([tmp[2]-1,tmp[3]-1])
         
     for _ in range(M):
