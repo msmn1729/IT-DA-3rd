@@ -4,14 +4,16 @@ import sys
 
 m,n=map(int, sys.stdin.readline().split()) #m 렬 n행
 
-visit=[[[False for _ in range(m)] for _ in range(n)] for _ in range(5)]
+visit=[[False for _ in range(m)] for _ in range(n)]
 
 dx=[0,0,1,-1]
 dy=[1,-1,0,0]
 
 mat=[[list() for _ in range(m)] for _ in range(n)]
 
+# 0~15 인데, 1~15로 해놓고 왜 안될까 고민함
 direction={
+    0:[0,0,0,0],    
     1:[0,1,0,0],
     2:[0,0,0,1],
     3:[0,1,0,1],
@@ -29,6 +31,11 @@ direction={
     15:[1,1,1,1]
 }
 
+room_num=0
+room_size=0
+after_crash=-1
+
+depth=0
 
 for i in range(n):
     dsnp=list(map(int, sys.stdin.readline().split()))
@@ -37,53 +44,44 @@ for i in range(n):
         for k in range(4):
             mat[i][j].append(dir[k])
 
-
-def dfs(depth, x,y):
+def dfs(x,y):
+    global depth
+    visit[x][y]=True
     stack.append([x,y])
-    pos=list()
+    depth+=1
   
-    for i in range(4):
-        if mat[x][y][i]==0:
-            pos.append(i)
-        else:
-            visit[i][x][y]=True
-
-    for k in pos:
-        nx,ny=x+dx[k], y+dy[k]
-        visit[k][x][y]=True
-        if 0<=nx<n and 0<=ny<m:
-            if not visit[4][nx][ny]:
-                visit[4][nx][ny]=True
-                depth=dfs(depth+1, nx,ny)
+    for k in range(4):
+        if mat[x][y][k]==0:
+            nx,ny=x+dx[k], y+dy[k]       
+            if 0<=nx<n and 0<=ny<m:
+                if not visit[nx][ny]:
+                    dfs(nx,ny)
                 
-
-    return depth
-
-room_num=0
-room_size=0
-after_crash=-1
-
 for i in range(n):
     for j in range(m):
-        if not visit[4][i][j]:
-            visit[4][i][j]=True
+        if not visit[i][j]:
             stack=list()
-            result=dfs(1,i,j)
-            room_size=max(room_size,result)
+            dfs(i,j)
+            room_size=max(room_size,depth)
             room_num+=1
             for k in range(len(stack)):
-                mat[stack[k][0]][stack[k][1]]=result
+                mat[stack[k][0]][stack[k][1]]=depth
+            depth=0
                       
 print(room_num)
 print(room_size)
 
 for i in range(n):
     for j in range(m):
-        for t in range(4):
-            ni,nj=i+dx[t],j+dy[t]
-            if 0<=ni<n and 0<=nj<m:
-                if mat[i][j]!=mat[ni][nj]:
-                    after_crash=max(after_crash,mat[i][j]+mat[ni][nj])
+        if visit[i][j]==True:
+            visit[i][j]=False
+            for t in range(4):
+                ni,nj=i+dx[t],j+dy[t]
+                if 0<=ni<n and 0<=nj<m:
+                    if mat[i][j]!=mat[ni][nj]:
+                        visit[ni][nj]=False
+                        after_crash=max(after_crash,mat[i][j]+mat[ni][nj])
+
 
 if after_crash==-1:
     if room_num>1:
