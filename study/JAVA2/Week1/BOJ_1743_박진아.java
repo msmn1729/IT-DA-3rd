@@ -99,8 +99,6 @@ public class Q1743 {
 					dfs(nextr,nextc);
 				}
 			}
-			
-			
 		}
 	}
 	
