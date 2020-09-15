@@ -1,5 +1,4 @@
 # 신기한 소수
-lst = [1,2,3,5,7,9]
 N = 0
 
 def isPrime(n):
@@ -14,10 +13,10 @@ def findPrime(n, num):
         return
     
     if n == 0:
-        for i in range(1,len(lst)-1):
-            findPrime(n+1,num+str(lst[i]))
+        for i in [2,3,5,7]:
+            findPrime(n+1,num+str(i))
     else:
-        for i in lst:
+        for i in [1,3,5,7,9]:
             if isPrime(int(num+str(i))):
                 findPrime(n+1,num+str(i))
 
