@@ -81,6 +81,7 @@ private static void dfs(int depth, int x, int y, double tmp) {
         result= result+tmp;
         return;
     }
+
     System.out.println("depth: "+depth);
     map[y][x]=1;
     
@@ -96,9 +97,6 @@ private static void dfs(int depth, int x, int y, double tmp) {
             depth+=1;
             dfs(depth,nextx,nexty,tmp*p);
         }
-        
-        
     }
-    
 }
 }
