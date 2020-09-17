@@ -90,7 +90,7 @@ public class Q2251 {
             visited[curA][curB][curC] =true;
 
              //A -> B            
-			if(curB+curA<=B) {
+			if(curB+curA<=B) { 
 				q.add(new Cups(0,curA+curB,curC));
 			}else {
 				q.add(new Cups(curA+curB-B,B,curC));
@@ -102,7 +102,7 @@ public class Q2251 {
             else {
                 q.add(new Cups(curA+curC-C,curB,C));
             }
-            
+
             //B -> A
 			if(curA+curB <= A) { 
 				q.add(new Cups(curA+curB,0,curC));
