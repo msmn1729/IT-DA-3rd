@@ -19,6 +19,11 @@ public class BOJ_1926_¿ìÃ¢¿Ï {
 		}
 	}
 	
+	private static int dfs(int y, int x) {
+		int answer=0;
+		check[y][x]=true;
+		dfs()
+	}
 	private static int bfs(int y, int x) {
 		int answer=0;
 		Queue<Pair> q=new LinkedList<>();
