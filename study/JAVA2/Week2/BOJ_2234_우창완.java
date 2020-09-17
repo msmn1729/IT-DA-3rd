@@ -3,8 +3,7 @@ import java.io.* ;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
-
-public class BOJ_2234_우창완 {
+public class Main {
 	private static int[][] map;
 	private static boolean[][]check;
 	private static int n,m;
@@ -17,12 +16,20 @@ public class BOJ_2234_우창완 {
 			this.y=y;
 		}
 	}
+    
+	private static void initalCheck(){
+		for(int i=0; i<m; i++){
+			for(int j=0; j<n; j++){
+				check[i][j]=false;
+			}
+		}
+	}
 	private static void breaking_wall() {
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
 				for(int wall=1; wall<=8; wall*=2) {
 					if(check[i][j]==false) {
-						Arrays.fill(check, false);
+						initalCheck();
 						map[i][j]-=wall;
 						room_number=Math.max(room_number, bfs(i,j));
 						map[i][j]+=wall;
@@ -43,30 +50,31 @@ public class BOJ_2234_우창완 {
 			int x=q.peek().x;
 			int y=q.peek().y;
 			q.poll();
+//			15에서 뺄 시 벽이 없는 곳의 방향을 알 수 있다
 			int wall=15-map[y][x];
 			
-			if(wall>=8) {
+			if(wall>=8 &&y+1<m) {
 				wall=wall-8;
 				if(!check[y+1][x]){
 					check[y+1][x]=true;
 					q.add(new Pair(y+1,x));
 				}
 			}
-			if(wall>=4) {
+			if(wall>=4 && x+1<n) {
 				wall=wall-4;
 				if(!check[y][x+1]) {
 					check[y][x+1]=true;
 					q.add(new Pair(y,x+1));
 				}
 			}
-			if(wall>=2) {
+			if(wall>=2 &&y-1>=0) {
 				wall=wall-2;
 				if(!check[y-1][x]) {
 					check[y-1][x]=true;
 					q.add(new Pair(y-1,x));
 				}
 			}
-			if(wall==1 ) {
+			if(wall==1&& x-1>=0 ) {
 				wall=wall-1;
 				if(!check[y][x-1]) {
 					check[y][x-1]=true;
@@ -102,10 +110,9 @@ public class BOJ_2234_우창완 {
 		}
 		System.out.println(cnt);
 		System.out.println(room_number);
-		Arrays.fill(check, false);
+		
+		initalCheck();
 		breaking_wall();
 	}
-
 	
-
 }
