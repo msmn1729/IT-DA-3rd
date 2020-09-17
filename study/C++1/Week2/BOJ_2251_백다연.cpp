@@ -1,7 +1,11 @@
-//물통
 #include <iostream>
-#include <cstdio>
 #include <queue>
+#include <vector>
+#include <string.h>
+#include <string>
+#include <utility>
+#include <algorithm>
+
 using namespace std;
 
 //앞 물통은 비어있고 마지막 물통가득
@@ -30,7 +34,7 @@ void bfs()
     Water now = q.front();
     q.pop();
 
-    if(visit[now.a][now.b])
+    if (visit[now.a][now.b])
       continue;
     visit[now.a][now.b] = true;
 
@@ -40,37 +44,38 @@ void bfs()
 
     //a에서 b로 옮기는 경우
     if (now.a + now.b > b)
-      q.push({(now.a + now.b)- b, b, c});
-    else q.push({0, now.a + now.b, now.c});
+      q.push({(now.a + now.b) - b, b, now.c});
+    else
+      q.push({0, now.a + now.b, now.c});
 
     //a에서 c로 옮기는 경우
     if (now.a + now.c > c)
-      q.push({(now.a + now.b)- c, now.b, c});
-    else q.push({0, now.b, now.a + now.c});
+      q.push({(now.a + now.b) - c, now.b, c});
+    else
+      q.push({0, now.b, now.a + now.c});
     //b에서 c
     if (now.b + now.c > c)
       q.push({now.a, (now.b + now.c) - c, c});
-    else q.push({now.a, 0, now.b + now.c});
+    else
+      q.push({now.a, 0, now.b + now.c});
     //b에서 a
-    if(now.b + now.a > a)
-      q.push({a,(now.b+now.a)-a, now.c});
+    if (now.b + now.a > a)
+      q.push({a, (now.b + now.a) - a, now.c});
     else
       q.push({now.b + now.a, 0, now.c});
     //c에서 a
-    if(now.c + now.a > a)
+    if (now.c + now.a > a)
       q.push({a, now.b, (now.c + now.a) - a});
 
     else
-      q.push({now.c + now.a, now.b , 0});
-      
+      q.push({now.c + now.a, now.b, 0});
+
     //c에서 b
-    if(now.c + now.b > b)
-      q.push({now.a, b, (now.c + now.b) -b });
+    if (now.c + now.b > b)
+      q.push({now.a, b, (now.c + now.b) - b});
 
     else
-      q.push({now.a,now.c+now.b,0});
-    
-    
+      q.push({now.a, now.c + now.b, 0});
   }
 }
 
@@ -78,9 +83,9 @@ int main()
 {
   cin >> a >> b >> c;
   bfs();
-  for(int i = 0; i <= c; i++)
+  for (int i = 0; i <= c; i++)
   {
-    if(ans[i])
+    if (ans[i])
       cout << i << endl;
   }
 
