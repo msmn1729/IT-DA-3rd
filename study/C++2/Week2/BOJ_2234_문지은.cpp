@@ -95,7 +95,7 @@ int main()
 				map[i][j] -= 4;
 				for (int a = 1; a <= m; a++)
 				{
-					memset(visited[a], 0, sizeof(int) * n);
+					memset(visited[a], 0, sizeof(int) * (n+1));
 				}
 				visited[i][j] = 1;
 				dfs(i, j);
@@ -107,7 +107,7 @@ int main()
 				map[i][j] -= 2;
 				for (int a = 1; a <= m; a++)
 				{
-					memset(visited[a], 0, sizeof(int) * n);
+					memset(visited[a], 0, sizeof(int) * (n+1));
 				}
 				visited[i][j] = 1;
 				dfs(i, j);
@@ -119,7 +119,7 @@ int main()
 				map[i][j] -= 1;
 				for (int a = 1; a <= m; a++)
 				{
-					memset(visited[a], 0, sizeof(int) * n);
+					memset(visited[a], 0, sizeof(int) * (n+1));
 				}
 				visited[i][j] = 1;
 				dfs(i, j);
