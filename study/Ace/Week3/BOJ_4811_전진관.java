@@ -30,7 +30,7 @@ public class Main {
                         }
                     }
                 }
-
+ 
                 if(!flag){
                     bw.write(dp[0][0] + "\n");
                     break;
