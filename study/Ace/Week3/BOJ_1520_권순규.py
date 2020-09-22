@@ -30,3 +30,4 @@ if __name__ == "__main__":
     Map.append([0 for _ in range(N+2)])
 
     print(dfs(M,N))
+ 
