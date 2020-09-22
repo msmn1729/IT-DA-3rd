@@ -15,7 +15,7 @@ def dfs(y,x):
     for i in range(4):
         ny = y + dy[i]
         nx = x + dx[i]
-        if Map[ny][nx] and Map[ny][nx] > Map[y][x]:
+        if Map[ny][nx] > Map[y][x]:
             dp[y][x] += dfs(ny,nx)
     
     return dp[y][x]
@@ -30,4 +30,3 @@ if __name__ == "__main__":
     Map.append([0 for _ in range(N+2)])
 
     print(dfs(M,N))
- 
