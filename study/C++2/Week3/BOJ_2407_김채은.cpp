@@ -11,14 +11,14 @@ using namespace std;
 
 #define MAX 100+1
 int n, m;
-long long int C[MAX][MAX];
+long long C[MAX][MAX];
 
 int min(int a, int b){
 	if(a>=b)	return b;
 	else	return a;
 }
 
-long long int dp(int n, int m){
+long long dp(int n, int m){
 	int i,j;
 	for(i=0; i<=n; i++){
 		for(j=0; j<=min(i,m); j++){
