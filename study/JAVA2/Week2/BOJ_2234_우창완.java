@@ -17,24 +17,43 @@ public class Main {
 		}
 	}
     
-	private static void initalCheck(){
+	private static void initialCheck(){
 		for(int i=0; i<m; i++){
 			for(int j=0; j<n; j++){
 				check[i][j]=false;
 			}
 		}
 	}
+//	벽이 있을 시 벽을 한 쪽씩 제거한뒤 최대값 
 	private static void breaking_wall() {
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
-				for(int wall=1; wall<=8; wall*=2) {
-					if(check[i][j]==false) {
-						initalCheck();
-						map[i][j]-=wall;
-						room_number=Math.max(room_number, bfs(i,j));
-						map[i][j]+=wall;
-					}
+				int wall= map[i][j];
+				if(wall>=8&& i+1<m){
+					map[i][j]-=8;
+					room_number=Math.max(room_number, bfs(i,j));
+					map[i][j]+=8;
+					wall=wall-8;
 				}
+				if(wall>=4 &&j+1<n){
+					map[i][j]-=4;
+					room_number=Math.max(room_number, bfs(i,j));
+					map[i][j]+=4;
+					wall=wall-4;
+				}
+				if(wall>=2&& i-1>=0){
+					map[i][j]-=2;
+					room_number=Math.max(room_number, bfs(i,j));
+					map[i][j]+=2;
+					wall=wall-2;
+				}
+				if(wall>=1 && j-1>=0){
+					map[i][j]-=1;
+					room_number=Math.max(room_number, bfs(i,j));
+					map[i][j]+=1;
+					wall=wall-1;
+				}
+				initialCheck();
 			}
 		}
 		System.out.println(room_number);
@@ -49,6 +68,8 @@ public class Main {
 			room_cnt++;
 			int x=q.peek().x;
 			int y=q.peek().y;
+			// System.out.print(x);
+			// System.out.println(y);
 			q.poll();
 //			15에서 뺄 시 벽이 없는 곳의 방향을 알 수 있다
 			int wall=15-map[y][x];
@@ -67,7 +88,7 @@ public class Main {
 					q.add(new Pair(y,x+1));
 				}
 			}
-			if(wall>=2 &&y-1>=0) {
+			if(wall>=2 && y-1>=0) {
 				wall=wall-2;
 				if(!check[y-1][x]) {
 					check[y-1][x]=true;
@@ -105,13 +126,14 @@ public class Main {
 				if(check[i][j]==false) {
 					room_number=Math.max(room_number, bfs(i,j));
 					cnt++;
+					// System.out.println(cnt);
 				}
 			}
 		}
 		System.out.println(cnt);
 		System.out.println(room_number);
-		
-		initalCheck();
+		room_number=1;
+		initialCheck();
 		breaking_wall();
 	}
 	
