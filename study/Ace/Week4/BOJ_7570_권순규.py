@@ -7,4 +7,4 @@ dp = [0] * (N+1)
 for i in range(N):
     dp[children[i]] = dp[children[i]-1] + 1
     
-print(N-max(dp))
+print(N-max(dp)) 
