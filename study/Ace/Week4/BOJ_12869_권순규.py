@@ -38,4 +38,4 @@ if __name__ == "__main__":
     while len(scv) < 3:
         scv.append(0)
         
-    print(func(scv[0],scv[1],scv[2]))
+    print(func(scv[0],scv[1],scv[2])) 
