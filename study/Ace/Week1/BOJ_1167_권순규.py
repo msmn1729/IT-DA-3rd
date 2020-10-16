@@ -16,7 +16,7 @@ def dfs(start, length):
         
 if __name__ == "__main__":
     V = int(input())
-    graph = [[]]*(V+1)
+    graph = [[] for _ in range(V+1)]
     visited = [False]*(V+1)
     answer = 0
     end = 0
@@ -25,10 +25,7 @@ if __name__ == "__main__":
         
         for j in range(1, len(tmp)-2, 2):
             graph[tmp[0]].append((tmp[j], tmp[j+1]))
-    
-    #for i in graph:
-    #    print(i)
-    
+
     dfs(1,0)
     visited = [False]*(V+1)
     dfs(end,0)
