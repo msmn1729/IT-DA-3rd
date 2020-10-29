@@ -1,46 +1,67 @@
 #include <iostream>
 
+#define MAX(x,y)    ((x)>(y)?(x):(y))
+
 using namespace std;
 
-int child[1000000] {};
-bool memo[1000001] {false, }; // 그 숫자를 파악했는지 체크
-int numChild;
+typedef struct
+{
+    int curNum;
+    int len;
+} chunk;
+
+int N;
+int arr[1000000] {};
+chunk check[1000000] = {(0, 0), };
+int CN = 1; // Chunk Num
+
 /*
-    연속하는 숫자의 패턴을 찾는다
-    5 2 4 1 3 -> 2 3 이 연속이므로 5 4 1 만 이동하면 된다
-    4 7 2 5 1 6 -> 4 5 6 이 연속이므로 7 2 1 3 만 이동하면 된다
+    1 4 2 3 5 -> 1 2 3 5 4 -> 1 2 3 4 5
+    5 4 1 2 3 -> 5 1 2 3 4 -> 1 2 3 4 5
+    4 1 5 2 3 -> 1 5 2 3 4 -> 1 2 3 4 5
+    4 1 2 3 5 -> 1 2 3 5 4 -> 1 2 3 4 5
+    4 5 1 2 3 -> 5 1 2 3 4 -> 1 2 3 4 5
+    => 1씩 증가하는 가장 큰 덩어리를 찾는다!
 */
+
 void solve()
 {
-    int maxPattern = 0;
-    for (int i = 0; i < numChild; i++) {
-        int curNum = child[i];
-        int curPattern = 1;
-        if (!memo[curNum]) {
-            for (int j = 1; j < numChild - i; j++) {
-                if (memo[child[i + j]]) {
-                    continue;
+    check[0].curNum = arr[0];
+
+    for (int i = 1; i < N; i++) {
+        for (int j = 0; j < CN; j++) {
+            if (check[j].curNum == arr[i] - 1) {
+                cout << "find" << endl;
+                check[j].curNum = arr[i];
+                if (check[j].len == 0) {
+                    check[j].len = 2;
                 }
-                if (child[i + j] == curNum + 1) {
-                    curPattern++;
-                    curNum++;
-                    memo[child[i + j]] = true;    
+                else {
+                    check[j].len++;
                 }
             }
-            memo[curNum] = true; // 그 숫자 파악으로 체크
-        }
-        if (curPattern > 1) {
-            maxPattern = maxPattern >= curPattern ? maxPattern : curPattern;
+            else {
+                CN++;
+                cout << "else" << endl;
+                check[CN - 1].curNum = arr[i];
+                break;
+            }
         }
     }
-    cout << numChild - maxPattern << endl;
+    
+    int ML = 0; // Max Len
+    for (int i = 0; i < CN; i++) {
+        ML = MAX(ML, check[i].len);
+    }
+
+    cout << N - ML << endl;
 }
 
 void input()
 {
-    cin >> numChild;
-    for (int i = 0; i < numChild; i++) {
-        cin >> child[i];
+    cin >> N;
+    for (int i = 0; i < N; i++) {
+        cin >> arr[i];
     }
 }
 
