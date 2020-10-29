@@ -3,7 +3,7 @@
 	import java.io.InputStreamReader;
 	
 	public class BOJ_10164_¿ìÃ¢¿Ï {
-		static int [][] dp= new int [20][20];
+		static int [][] dp= new int [16][16];
 		static int point_x;
 		static int point_y;
 		public static void main(String[] args) throws IOException {
