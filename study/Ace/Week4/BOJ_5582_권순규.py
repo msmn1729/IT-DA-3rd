@@ -18,3 +18,4 @@ if len(A) > len(B):
     print(LCS(A,B))
 else:
     print(LCS(B,A))
+ 
