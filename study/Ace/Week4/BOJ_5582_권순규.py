@@ -14,8 +14,5 @@ def LCS(long, short):
 
 A = input()
 B = input()
-if len(A) > len(B):
-    print(LCS(A,B))
-else:
-    print(LCS(B,A))
+print(LCS(B,A))
  
