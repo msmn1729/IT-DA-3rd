@@ -32,4 +32,4 @@ B = input()
 a, b = LCS(B,A)
 print(a)
 if b:
-    print(b)
+    print(b) 
