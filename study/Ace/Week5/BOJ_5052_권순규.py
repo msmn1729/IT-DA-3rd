@@ -8,7 +8,7 @@ for _ in range(int(input())):
     lst.sort()
     
     flag = True
-    for i in range(len(lst)-1):
+    for i in range(n-1):
         if lst[i] == lst[i+1][:len(lst[i])]:
             flag = False
             break
