@@ -1,4 +1,3 @@
-//testcase는 통과 그러나 틀림
 #include<iostream>
 #include<string>
 #include<algorithm>
@@ -24,13 +23,15 @@ void Solution(){
 	for(int i=0; i<testCase; i++){
 		sort(arr[i],arr[i]+s[i]);
 		for(int j=0; j<s[i]-1; j++){
-			if(string::npos!=arr[i][j+1].find(arr[i][j])){
-				ans[i]=-1;
+//			if(string::npos!=arr[i][j+1].find(arr[i][j])){
+//				ans[i]=-1;
+//				break;
+//			}
+			if (arr[i][j]==arr[i][j+1].substr(0,arr[i][j].size())) {
+				ans[i] = -1;
 				break;
 			}
 		}
-//		if (ans[i] != -1) //not include
-//			ans[i] = 1;
 	}
 	for(int i=0; i<testCase; i++){
 		if(ans[i]==-1)
