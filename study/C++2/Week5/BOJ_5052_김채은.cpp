@@ -1,4 +1,4 @@
-//testcase´Â Åë°ú ±×·¯³ª Æ²¸²
+//testcaseëŠ” í†µê³¼ ê·¸ëŸ¬ë‚˜ í‹€ë¦¼
 #include<iostream>
 #include<string>
 #include<algorithm>
@@ -6,7 +6,7 @@
 using namespace std;
 int testCase;
 int s[51]={-1,};
-string arr[51][10001]={"n",}; //[testcaseÈ½¼ö][¹øÈ£ °³¼ö]
+string arr[51][10001]={"n",}; //[testcaseíšŸìˆ˜][ë²ˆí˜¸ ê°œìˆ˜]
 int ans[51]={0,};
 
 void Input(){
@@ -15,13 +15,8 @@ void Input(){
 	for(int i=0; i<testCase; i++){
 		cin>>S;
 		s[i]=S;
-		for(int j=0; j<s[i]; j++){
+		for(int j=0; j<s[i]; j++)
 			cin>>arr[i][j];
-			if(sizeof(arr[i][j])/sizeof(string)>10){
-				cout<<"10101010";
-				return;
-			}
-		}
 	}
 }
 
