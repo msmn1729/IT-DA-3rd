@@ -1,9 +1,6 @@
 def compare(short,long):
     N = len(short)
-    if short == long[:N]:
-        return False
-    else:
-        return True
+    return not short == long[:N]
 
 if __name__ == "__main__":
     for _ in range(int(input())):
