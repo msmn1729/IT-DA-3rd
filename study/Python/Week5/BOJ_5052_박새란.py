@@ -4,7 +4,6 @@ case: combination, both
 """
 import sys
 t = int(input())
-phone=[]
 def func(phone):
     for i in range(1,n):
         for j in range(i):
@@ -18,6 +17,7 @@ def func(phone):
 if __name__ == "__main__":
     for i in range(t):
         n = int(input())
+        phone= []
         for _ in range(n):
             phone.append(sys.stdin.readline().strip())
         print(phone)
