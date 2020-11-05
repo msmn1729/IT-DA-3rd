@@ -2,6 +2,8 @@
 번호의 처음 부분에 다른번호가 포함되면 안됨
 case: combination, both 
 """
+
+#시간초과
 import sys
 t = int(input())
 def func(phone):
