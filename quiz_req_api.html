@@ -7,7 +7,7 @@
     <script src="./highlight/highlight.pack.js"></script>
     <link rel="stylesheet" href="./highlight/styles/androidstudio.css">
     <style>
-      #loading {
+      .loading {
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -22,7 +22,7 @@
     </style>
   </head>
   <body>
-    <div id="loading">
+    <div class="loading">
       <img src="https://github.com/Rurril/IT-DA-3rd/blob/master/files/images/loading_img.gif" width="20%" />
     </div>
     <pre>
@@ -73,6 +73,7 @@
                 const result = await response.text();
                 const hideDisplay = document.getElementById('loading');
 
+                hideDisplay.classList.remove('loading');
                 hideDisplay.classList.add('hide');
                 $('#code-express').text(result);
                 $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
