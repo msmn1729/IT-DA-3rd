@@ -64,7 +64,7 @@
           for (let j = 0; j < 3; j++) {
             const url = temp + langu[j];
             // fetch main
-            const response = await fetch(url);
+            let response = await fetch(url);
             if (response.ok) { // HTTP 상태 코드가 200~299일 경우
               const result = await response.text();
               const hideDisplay = document.getElementById('loading');
