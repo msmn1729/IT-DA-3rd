@@ -54,6 +54,8 @@
       else alert("URL ERROR");
     }); // ready()
 
+    let isFind = false;
+
     async function fetchTarget(vars, targetUrl) {
         // https://nuung.github.io/IT-DA-3rd/study/ + Ace / C++1 / C++2 / JAVA1 / JAVA2 / Python
         // Week1 ~ 9 + BOJ_ + vars.number + _ + vars.name + .java / .cpp / .py
@@ -61,24 +63,24 @@
         const langu = [".java", ".cpp", ".py"];
         for (let i = 1; i <= 9; i++) {
           const temp = targetUrl + "Week" + i + "/BOJ_" + vars.number + "_" + vars.name;
-          for (let j = 0; j < 3; j++) {
-            const url = temp + langu[j];
-            // fetch main
-            const response = await fetch(url);
-            if (response.ok) { // HTTP 상태 코드가 200~299일 경우
-              const result = await response.text();
-              const hideDisplay = document.getElementById('loading');
+          
+          if(!isFind){
+            for (let j = 0; j < 3; j++) {
+              const url = temp + langu[j];
+              // fetch main
+              const response = await fetch(url);
+              if (response.ok) { // HTTP 상태 코드가 200~299일 경우
+                const result = await response.text();
+                const hideDisplay = document.getElementById('loading');
 
-              hideDisplay.classList.add('hide');
-              $('#code-express').text(result);
-              $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
-              
-              return;
-            } else {
-              $('#code-express').text("There is no any code, pleas check Name or Number of quiz");
-              $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
-            }
-          } // for language
+                hideDisplay.classList.add('hide');
+                $('#code-express').text(result);
+                $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
+                isFind = true;
+                break;
+              } 
+            } // for language
+          }
         } // for week
     }
   </script>
