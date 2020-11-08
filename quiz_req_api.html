@@ -6,20 +6,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./highlight/highlight.pack.js"></script>
     <link rel="stylesheet" href="./highlight/styles/androidstudio.css">
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/Androidstudio.min.css"> -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
+    <style>
+      #loading {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <div id="loading">
+      <img src="https://github.com/Rurril/IT-DA-3rd/blob/master/files/images/loading_img.gif" width="20%" />
+    </div>
     <pre>
       <code id="code-express"></code>
     </pre>
   </body>
   <script>
-    let vars = [], hash;
+    const vars = [], hash;
     $(document).ready(function () {
       function getUrlVars() {
-        let url = decodeURI(window.location.href);
-        let hashes = url.slice(url.indexOf("?") + 1).split("&");
+        const url = decodeURI(window.location.href);
+        const hashes = url.slice(url.indexOf("?") + 1).split("&");
         for (let i = 0; i < hashes.length; i++) {
           hash = hashes[i].split("=");
           vars.push(hash[0]);
@@ -30,7 +45,7 @@
 
       vars = getUrlVars();
       if (vars) {
-        let urlList = ['https://Rurril.github.io/IT-DA-3rd/study/Ace/', 'https://Rurril.github.io/IT-DA-3rd/study/C++1/',
+        const urlList = ['https://Rurril.github.io/IT-DA-3rd/study/Ace/', 'https://Rurril.github.io/IT-DA-3rd/study/C++1/',
                        'https://Rurril.github.io/IT-DA-3rd/study/C++2/', 'https://Rurril.github.io/IT-DA-3rd/study/JAVA1/',
                        'https://Rurril.github.io/IT-DA-3rd/study/JAVA2/', 'https://Rurril.github.io/IT-DA-3rd/study/Python/'];
 
@@ -43,20 +58,25 @@
         // https://nuung.github.io/IT-DA-3rd/study/ + Ace / C++1 / C++2 / JAVA1 / JAVA2 / Python
         // Week1 ~ 9 + BOJ_ + vars.number + _ + vars.name + .java / .cpp / .py
 
-        let langu = [".java", ".cpp", ".py"];
+        const langu = [".java", ".cpp", ".py"];
         for (let i = 1; i <= 9; i++) {
-          let temp = targetUrl + "Week" + i + "/BOJ_" + vars.number + "_" + vars.name;
+          const temp = targetUrl + "Week" + i + "/BOJ_" + vars.number + "_" + vars.name;
           for (let j = 0; j < 3; j++) {
-            let url = temp + langu[j];
+            const url = temp + langu[j];
             // fetch main
-            let response = await fetch(url);
+            const response = await fetch(url);
             if (response.ok) { // HTTP 상태 코드가 200~299일 경우
-              let result = await response.text();
-              console.log(result);
+              const result = await response.text();
+              const hideDisplay = document.getElementById('loading');
+
+              hideDisplay.classList.add('hide');
               $('#code-express').text(result);
               $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
+              
+              return;
             } else {
-              // console.log("HTTP-Error: " + response.status + url); // for check 
+              $('#code-express').text("There is no any code, pleas check Name or Number of quiz");
+              $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
             }
           } // for language
         } // for week
