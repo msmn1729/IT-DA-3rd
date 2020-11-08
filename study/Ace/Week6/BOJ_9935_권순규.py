@@ -16,8 +16,8 @@ for ch in text:
             for i in range(bl):
                 answer.pop()
 
-if not len(answer):
-    print('FRULA')
-else:
+if answer:
     for i in answer:
         print(i,end='')
+else:
+    print('FRULA')
