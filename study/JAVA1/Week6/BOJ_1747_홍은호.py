@@ -15,6 +15,7 @@ for i in range(N,1000001):
         continue
     if str(i) == str(i)[::-1]:
         if prime_number(i):
+            ans = i
             break
 
 if ans == 0:
