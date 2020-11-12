@@ -11,59 +11,44 @@ public class 1495_ㅊㅁ {
 		int M = input.nextInt(); // 최대 볼륨
 		
 		int V[] = new int[N]; // 리스트 V
+		int dp[][] = new int[N][M+1];
 		
-		Queue<Integer> Vol = new LinkedList<Integer>();
+		for(int n = 0; n < N; n++)
+			V[n] = input.nextInt();
+	
+		if(S + V[0] >= 0 && S + V[0] <= M) 
+			dp[0][S+V[0]] = 1;
 		
-		Vol.add(S); // 먼저 시작 볼륨을 넣어준다.
+		if(S - V[0] >= 0 && S - V[0] <= M) 
+			dp[0][S-V[0]] = 1;
 		
-		int count = 1;
-		
-		for(int i = 0; i < N; i++) {
+		for(int i = 1; i < N; i++) {
 			
-			V[i] = input.nextInt();
-			
-			int COUNT = count;
-			
-			count = 0;
-			
-			if(COUNT == 0) {
+			for(int j = 0; j <= M; j++) {
 				
-				System.out.println(-1);
-				return;
-			}
-			
-			for(int c = 1; c <= COUNT; c++) {
-				
-				int tmp_vol = Vol.poll();
-				
-				if(tmp_vol + V[i] >= 0 && tmp_vol + V[i] <= M) {
+				if(dp[i-1][j] == 1) {
 					
-					Vol.add(tmp_vol + V[i]);
-					count++;
+					if(j + V[i] >= 0 && j + V[i] <= M) 
+						dp[i][j + V[i]] = 1;
+					
+					if(j - V[i] >= 0 && j - V[i] <= M) 
+						dp[i][j - V[i]] = 1;
 				}
-				
-				
-				if(tmp_vol - V[i] >= 0 && tmp_vol - V[i] <= M) {
-					
-					Vol.add(tmp_vol - V[i]);
-					count++;
-				}
-					
 			}
-			
 		}
 		
-		int max = 0;
+		int max = -1;
 		
-		while(!Vol.isEmpty()) {
-			int poll_q = Vol.poll();
+		for(int m = M; m >= 0; m--) {
 			
-			if(max < poll_q)
-				max = poll_q;
-			
+			if(dp[N-1][m] == 1) {
+				max = m;
+				break;
+			}
 		}
 		
 		System.out.println(max);
+		
 	}
 
 }

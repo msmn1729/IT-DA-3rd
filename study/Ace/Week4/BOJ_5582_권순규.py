@@ -1,34 +1,18 @@
-def func(long, short):
-    N = len(short)
-    for start in range(N):
-        for end in range(start+size,N):
-            compare(long,short,start,end)
-
-def compare(apply, target,start,end):
-    global answer
-    N = len(apply)
-    M = len(target)
-    for i in range(N-M):
-        flag = True
-        for j in range(M):
-            if apply[i+j] != target[j]:
-                flag = False
-                break
-        if flag:
-            if M > answer:
-                answer = M
-                size = M+1
-            return True
-    return False        
-
-
-if __name__ == "__main__":
+def LCS(long, short):
     answer = 0
-    size = 1
-    A = input()
-    B = input()
-    if len(A) > len(B):
-        func(A,B)
-    else:
-        func(B,A)
-    print(answer)
+    ll = len(long)
+    sl = len(short)
+    lcs = [[0] * (sl+1) for _ in range(ll+1)]
+    for i in range(1,ll+1):
+        for j in range(1,sl+1):
+            if long[i-1] == short[j-1]:
+                lcs[i][j] = lcs[i-1][j-1] + 1
+                
+                answer = max(answer,lcs[i][j])
+    
+    return answer
+
+A = input()
+B = input()
+print(LCS(B,A))
+ 
