@@ -17,7 +17,6 @@ for ch in text:
                 answer.pop()
 
 if answer:
-    for i in answer:
-        print(i,end='')
+    print(''.join(answer))
 else:
     print('FRULA')
