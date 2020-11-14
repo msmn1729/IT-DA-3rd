@@ -21,12 +21,11 @@ num = sys.stdin.readline().strip()
 stack = [num[0]]
 
 for i in range(1,len(num)):
-    remain = True
-    while remain and K and stack[-1] < num[i]:
+    while K and stack[-1] < num[i]:
         stack.pop()
         K -= 1
         if not stack:
-            remain = False
+            break
         
     stack.append(num[i])
     
