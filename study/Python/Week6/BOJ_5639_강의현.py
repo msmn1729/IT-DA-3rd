@@ -5,8 +5,7 @@ import sys
 def postorder(start, end):
     if start > end:
         return
-
-    # start로 부터 값을 늘려나갈때 더 큰 값을 찾지못한경우
+    # start로 부터 값을 늘려나갈때 더 큰 값을 찾지 못한 경우
     # 다시 끝값부터 재귀를 호출하기 위한 division 설정
     division=end+1
 
