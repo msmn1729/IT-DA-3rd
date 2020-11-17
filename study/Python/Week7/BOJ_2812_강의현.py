@@ -18,4 +18,6 @@ for i in range(N):
 
     stack.append(now)
 
-print(''.join(stack[:N-K]))
+# 출력문 직관적이게 변경
+for i in range(len(stack)-K):
+    print(stack[i],end='')
