@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class 2812_크게만들기_채민 {
+public class 2812_크게만들기_ㅊㅁ {
 
 	public static void main(String[] args) {
 		
@@ -10,10 +10,10 @@ public class 2812_크게만들기_채민 {
 		int K = input.nextInt();
 		
 		String S = input.next();
-    
-    /**
-    1. 시간초과 코드. 
-    */
+		
+		/**
+		 * 1. 시간초과 코드
+		 */
 		
 		int index = -1;
 		String answer = "";
@@ -37,16 +37,17 @@ public class 2812_크게만들기_채민 {
 		
 		System.out.println(answer);
 		
+		
 		/**
-    밑에 있는 방법은 Week7 Python팀 코드 보고 도움을 얻은 코드입니다.
-    
-    반례 6 4
-    198794
-    
-    에서 [박한규]님 코드 참고했습니다.(모르시는분이지만..감사드려요..)
-    */
-    
-    /*
+		 * 밑에 있는 방법은 Week7 Python팀 코드 보고 도움을 얻은 코드입니다.
+		 * 
+		 * 반례 6 4
+		 * 198794
+		 * 
+		 * 에서 [박한규]님 코드 참고했습니다.(모르시는분이지만..감사드려요..)
+		 */
+		
+		/*
 		ArrayList <Integer> answer = new ArrayList<>();
 		
 		for(int i = 0; i < N; i++) {
@@ -68,6 +69,7 @@ public class 2812_크게만들기_채민 {
 			System.out.print(answer.get(a));
 		}
 		*/
+		
 	}
 
 }
