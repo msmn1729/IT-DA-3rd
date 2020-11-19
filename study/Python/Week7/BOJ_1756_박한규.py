@@ -14,7 +14,6 @@ for i in range(d-1):
         new_oven.append(oven[i+1])
 new_oven.append(0)                     # 바닥으로 들어갈 친구를 위해
 print(new_oven)
-
 loc = []
 low = d
 flag = True
