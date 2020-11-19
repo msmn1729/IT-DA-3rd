@@ -9,15 +9,18 @@
 
 **깃관리 : `전진관`**
 
+<div align = "center">
 
+[Code Finder](https://rurril.github.io/IT-DA-3rd/)
 
+</div>
 
 ## 🎯 동아리 소개
 
 -	💁 누가? : IT:DA 3기 동아리원이
 -	🐍 무엇을? : [백준](https://www.acmicpc.net/) 알고리즘 문제를
 -	⏰ 언제? : 매주 목요일 19:00 ~ 21:00 
--   🏛 어디서? : ~~건대 스터디룸~~ 
+-   🏛 어디서? : 건대 스터디룸
 -	✏️ 어떻게? : 과제 3문제를 풀어오고, 다 같이 모여서 한 문제를 풉니다 
 
 ---
@@ -75,23 +78,32 @@
 
 > 상반 문제 : `가장 긴 증가하는 부분수열4(14002)` `줄세우기(7570)` `뮤탈리스크(12869)` `스터디 : 공통 부분 문자열(5582)`
 
-### 6주차 - **`Tree` `String`** ❎
+### 6주차 - **`Tree` `String`** ✅
 
-(11월 5일) 
-
-
-> 중반 문제 : `전화번호목록(5052)` `상근이의 여행(9372)` `java vs c++(3613)` `스터디 : ??`
-
-> 상반 문제 : `전화번호목록(5052)` `LCS 2(9252)` `LCS 3(1958)` `스터디 : ??`
+(11월 5일) OT 진행
 
 
-### 7주차 - **`Tree` `String`** ❎
+> 중반 문제 : `전화번호목록(5052)` `상근이의 여행(9372)` `java vs c++(3613)` `스터디 : --`
+
+> 상반 문제 : `전화번호목록(5052)` `LCS 2(9252)` `LCS 3(1958)` `스터디 : --`
+
+
+### 7주차 - **`Tree` `String`** ✅
 
 (11월 12일) 
+
+> 중반 문제 : `단절점과 단절선(14675)` `소수&펠린드롬(1747)` `IOIOI(5525)` `스터디 : 이진 검색 트리(5639)`
+
+> 상반 문제 : `단절점과 단절선(14675)` `소수&펠린드롬(1747)` `문자열 폭발(9935)` `스터디 : 잠수함식별(2671)`
  
 ### 8주차 - **`Greedy Algorithm` `Binary Search`** ❎
 
 (11월 19일)
+
+> 중반 문제 : `크게 만들기(2812)` `피자굽기(1756)` `풍선공장(15810)` `스터디 : --`
+
+> 상반 문제 : `크게 만들기(2812)` `중량제한(1939)` `단어 수학(1339)` `스터디 : --`
+
 
 ### 9주차 - **`Greedy Algorithm` `Binary Search`** ❎
 
@@ -102,6 +114,47 @@
 (12월 3일) 
 
 
+### 지금까지 푼 문제 
+
+[1167](https://www.acmicpc.net/problem/1167)
+[1256](https://www.acmicpc.net/problem/1256)
+[1405](https://www.acmicpc.net/problem/1405)
+[1495](https://www.acmicpc.net/problem/1495)
+[1520](https://www.acmicpc.net/problem/1520)
+[1600](https://www.acmicpc.net/problem/1600)
+[1743](https://www.acmicpc.net/problem/1743)
+[1747](https://www.acmicpc.net/problem/1747)
+[1926](https://www.acmicpc.net/problem/1926)
+[1958](https://www.acmicpc.net/problem/1958)
+[2023](https://www.acmicpc.net/problem/2023)
+[2234](https://www.acmicpc.net/problem/2234)
+[2251](https://www.acmicpc.net/problem/2251)
+[2407](https://www.acmicpc.net/problem/2407)
+[2671](https://www.acmicpc.net/problem/2671)
+[3613](https://www.acmicpc.net/problem/3613)
+[4811](https://www.acmicpc.net/problem/4811)
+[5052](https://www.acmicpc.net/problem/5052)
+[5525](https://www.acmicpc.net/problem/5525)
+[5557](https://www.acmicpc.net/problem/5557)
+[5567](https://www.acmicpc.net/problem/5567)
+[5582](https://www.acmicpc.net/problem/5582)
+[5639](https://www.acmicpc.net/problem/5639)
+[7570](https://www.acmicpc.net/problem/7570)
+[9252](https://www.acmicpc.net/problem/9252)
+[9328](https://www.acmicpc.net/problem/9328)
+[9372](https://www.acmicpc.net/problem/9372)
+[9655](https://www.acmicpc.net/problem/9655)
+[9935](https://www.acmicpc.net/problem/9935)
+[10164](https://www.acmicpc.net/problem/10164)
+[12869](https://www.acmicpc.net/problem/12869)
+[14002](https://www.acmicpc.net/problem/14002)
+[14675](https://www.acmicpc.net/problem/14675)
+[17135](https://www.acmicpc.net/problem/17135)
+[19238](https://www.acmicpc.net/problem/19238)
+
+> `실버 5 : 2문제` `실버 4 : 0문제` `실버 3 : 1문제` `실버 2 : 2문제` `실버 1 : 7문제`
+
+> `골드 5 : 10문제` `골드 4 : 8문제` `골드 3 : 3문제` `골드 2 : 0문제` `골드 1 : 1문제`
 
 
 ---
