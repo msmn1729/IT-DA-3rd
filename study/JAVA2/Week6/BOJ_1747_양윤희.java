@@ -15,14 +15,14 @@ public class Main11 {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
 		 while(true) {
-	            if(isPrimeNumber(n) && isPalindrome(n)) {
+	            if(prime(n) && palin(n)) {
 	                System.out.println(n);
 	                return;
 	            }
 	            n++;
 	        }
 	    }		
-	static boolean isPrimeNumber(int x) {//소수 인지 확인
+	static boolean prime(int x) {//소수 인지 확인
         if (x == 1) return false;
          
         // 에라토스 뭐시기로 풀기 귀찮,,,그냥 1과 자기자신으로만 나뉘는지,,,,
@@ -32,7 +32,7 @@ public class Main11 {
         return true;
 	}
 		     
-	static boolean isPalindrome(int x) { //팰린드롬인지 확인
+	static boolean palin(int x) { //팰린드롬인지 확인
         char[] arr = String.valueOf(x).toCharArray();
         int s = 0, e = arr.length-1;
          
