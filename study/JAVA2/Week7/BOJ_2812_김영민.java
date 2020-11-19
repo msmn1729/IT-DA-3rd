@@ -25,9 +25,11 @@ public class BOJ_2812_김영민 {
 		
 		for(int i=1; i<N; i++) {
 			while (count < K && !stack.isEmpty() && stack.peek() < arr[i]) {
+				//K만큼지우지않았고,값을비교한뒤에작으면
 				stack.pop();
 				count++;
 			}
+			//그다음값을push
 			stack.push(arr[i]);
 	    }
 		

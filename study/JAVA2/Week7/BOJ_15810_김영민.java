@@ -16,8 +16,8 @@ public class BOJ_15810_김영민 {
 		
 		for(int i=0; i<N; i++) A[i] = Integer.parseInt(st.nextToken());
 		
-		long right = 500000000000l;
-		long left = 1l;
+		long right = 500000000000l; //스태프2명이풍선1000000개만들때걸리는시간1000000(최대값)
+		long left = 1l; //최소값
 		
 		while(left<=right) {
 			long result = 0;

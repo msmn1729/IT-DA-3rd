@@ -9,8 +9,11 @@
 
 **깃관리 : `전진관`**
 
+<div align = "center">
 
+[Code Finder](https://rurril.github.io/IT-DA-3rd/)
 
+</div>
 
 ## 🎯 동아리 소개
 
