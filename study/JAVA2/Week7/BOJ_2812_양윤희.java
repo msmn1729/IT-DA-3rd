@@ -23,19 +23,14 @@ public class Main8{
 	        int idx=0, cnt=0;
 	       
 	        for(int i=1; i<N; i++) {
-	        	if(res[idx]>=arr[i]) {	
+	        	if(res[idx]>=arr[i] || cnt==K) {	
 	        		if(idx+1>=N-K)break;
 	        		res[idx+1] = arr[i];
 	        		idx++;
 	        		continue;
 	        	}
 	        	if(res[idx]<arr[i]) {
-	        		cnt = idx;
-	        		
-	        		while(cnt-- >0) {
-	        			if(res[cnt]>arr[i] ||cnt<0)break;
-	        		}
-	        		res[cnt] = arr[i];
+	        		res[idx] = arr[i];
 	        	}
 
 	        }
