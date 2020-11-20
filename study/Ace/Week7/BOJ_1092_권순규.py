@@ -14,18 +14,21 @@ while True:
     flag = False
     stack=[]
     for i in limit:
-        if weight[-1] <= i:
-            weight.pop()
-            flag = True
-            if not weight:
-                answer += 1
-                print(answer)
-                sys.exit(0)
-            
+        for index in range(-1,-len(weight)-1,-1):
+            if weight[index] <= i:
+                del weight[index]
+                flag = True
+                if not weight:
+                    answer += 1
+                    print(answer)
+                    sys.exit(0)
+                break
+                
     if flag:
         answer += 1
     else:
         break
+    
 if weight:
     print(-1)
 else:
