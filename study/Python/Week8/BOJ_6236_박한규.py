@@ -1,22 +1,35 @@
+# 아니 왜 안되는거야 ㅡ
 import sys
 read = sys.stdin.readline
+
+def pay(k):
+    cash = 0
+    cnt = 0
+    for i in l:
+        if k < i:
+            return -1
+        if cash < i:
+            cnt += 1
+            cash = k
+            if cnt > m: return 0
+        cash -= i
+    if cnt==m: return 1
+    else: return 2
 
 n, m = map(int, read().split())
 l = []
 for _ in range(n):
     l.append(int(read()))
-min, max = max(l), sum(l)
-while min+1 < max:
-    cnt = 0
-    sum = 0
-    mid = (min+max)//2
-    for i in l:
-        sum += i
-        if sum > mid:
-            sum = i
-            cnt += 1
-    if sum > 0:
-        cnt += 1
-    if cnt >= m: min = mid
-    else: max = mid
-print(min)
+lo, hi = max(l), sum(l)
+
+while lo < hi:
+    mid = (lo + hi)//2
+    res = pay(mid)
+    if res == -1 or res == 0:
+        lo = mid+1
+    if res == 1 or res == 2:
+        hi = mid+1
+print(lo)
+
+
+
