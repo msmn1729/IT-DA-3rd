@@ -39,34 +39,15 @@ int main()
 	{
 		while (!cargo.empty())
 		{
-			for (int j = 0; j < c.size(); j++)
-			{
-				/*
-				for (int i = 0; i < cargo.size(); i++)
-					cout << cargo[i] << " ";
-				cout << endl;
-				*/
-				if (cargo.empty()) break;
-				if (cargo.front() <= c[j])
+			for(int i =0;i<c.size();i++)
+			{ 
+				for (int j = 0; j < cargo.size(); j++)
 				{
-					cargo.erase(cargo.begin());
-				}
-				else
-				{
-					for (int i = 1; i < cargo.size(); i++)
+					if (cargo[j] <= c[i])
 					{
-						if (cargo[i] <= c[j])
-						{
-							cargo.erase(cargo.begin() + i); break;
-						}
-					}
-					/*
-					if (lower_bound(cargo.begin(), cargo.end(), c[j]) == cargo.end())
+						cargo.erase(cargo.begin() + j);
 						break;
-
-					int idx = lower_bound(cargo.begin(), cargo.end(), c[j]) - cargo.begin();
-					cargo.erase(cargo.begin() + idx);
-					*/
+					}
 				}
 			}
 			minute++;
