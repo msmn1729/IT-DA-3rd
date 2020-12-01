@@ -20,7 +20,6 @@ def func(k,prev):
             func(k+1,i)
             included[i] = False
             
-from itertools import combinations
 import sys
 if __name__ == "__main__":
     N, K = map(int,input().split())
