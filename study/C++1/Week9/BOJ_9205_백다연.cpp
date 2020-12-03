@@ -24,15 +24,15 @@ void DFS(int a, int b)
 
   num = abs(ex - a) + abs(ey - b); //거리 계산
 
-  if (check == 1 || num <= 1000)
+  if (check == 1 || num <= 1000) //거리가 1000보다작으면
   {
     check = 1;
     return;
   }
 
-  for (int i = 0; i < v.size(); ++i)
+  for (int i = 0; i < v.size(); ++i) 
   {
-    if (visit[i] == 1)
+    if (visit[i] == 1) //편의점을 방문했는지 아닌지 
     {
       continue;
     }
@@ -51,7 +51,7 @@ void DFS(int a, int b)
   }
 }
 
-int main(int argc, char *argv[])
+int main()
 {
   cin >> t;
 
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
       cin >> x >> y;
       v.push_back(make_pair(x, y));
     }
-    cin >> ex >> ey;
+    cin >> ex >> ey; 
 
     check = 0;
     DFS(nx, ny);
