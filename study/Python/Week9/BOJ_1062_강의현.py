@@ -22,7 +22,7 @@ else:
     check = check - alpha
     
     answer = 0
-    for c in combinations(check, min(K-5, len(check))):
+    for c in combinations(check, min(K-5, len(check))): # min -> '더 적은 알파벳으로 배울 수 있다면'
         count = 0
         subset = set(c).union(alpha)
         for word in text:
