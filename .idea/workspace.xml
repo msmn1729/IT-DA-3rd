@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a6bf65-c94b-4bda-9823-24b800fa4a79" name="Default Changelist" comment="Create HW 2812 박한규">
-      <change afterPath="$PROJECT_DIR$/study/Python/Week9/BOJ_9205_박한규.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/study/Python/Week9/BOJ_15486_박한규.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Python.BOJ_9205_박한규">
+  <component name="RunManager" selected="Python.BOJ_15486_박한규">
     <configuration name="BOJ_11000_박한규" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IT-DA-3rd" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,7 +76,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="BOJ_11497_박한규" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="BOJ_15486_박한규" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IT-DA-3rd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -85,12 +84,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study/Python/Week8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study/Python/Week9" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study/Python/Week8/BOJ_11497_박한규.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study/Python/Week9/BOJ_15486_박한규.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.BOJ_15486_박한규" />
         <item itemvalue="Python.BOJ_9205_박한규" />
         <item itemvalue="Python.BOJ_7795_박한규" />
         <item itemvalue="Python.BOJ_11000_박한규" />
         <item itemvalue="Python.BOJ_6236_박한규" />
-        <item itemvalue="Python.BOJ_11497_박한규" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +198,7 @@
       <workItem from="1606211534781" duration="3250000" />
       <workItem from="1606385025366" duration="4041000" />
       <workItem from="1606389607380" duration="747000" />
-      <workItem from="1606987246239" duration="274000" />
+      <workItem from="1606987246239" duration="543000" />
     </task>
     <task id="LOCAL-00001" summary="Create HW 2812 박한규">
       <created>1605455384541</created>
@@ -300,6 +299,7 @@
     <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_7795_.coverage" NAME="BOJ_7795_박한규 Coverage Results" MODIFIED="1606387804165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week8" />
     <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_11000_.coverage" NAME="BOJ_11000_박한규 Coverage Results" MODIFIED="1606214584250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week8" />
     <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_15810_.coverage" NAME="BOJ_15810_박한규 Coverage Results" MODIFIED="1605435978345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week7" />
+    <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_9205_.coverage" NAME="BOJ_9205_박한규 Coverage Results" MODIFIED="1606987530593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week9" />
     <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_6236_.coverage" NAME="BOJ_6236_박한규 Coverage Results" MODIFIED="1606197623426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week8" />
     <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_2812_.coverage" NAME="BOJ_2812_박한규 Coverage Results" MODIFIED="1605456618776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week7" />
     <SUITE FILE_PATH="coverage/IT_DA_3rd$BOJ_1946_.coverage" NAME="BOJ_1946_박한규 Coverage Results" MODIFIED="1605785635064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Python/Week7" />
