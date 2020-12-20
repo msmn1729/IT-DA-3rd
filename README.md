@@ -1,6 +1,10 @@
 ✏️ IT:DA 알고리즘 스터디 3rd
 ====================================
 
+## 🥳 수고 하셨습니다 🎉
+
+---
+
 **회장 : `백다연`**
 
 **부회장 : `김민정`**
@@ -96,65 +100,32 @@
 
 > 상반 문제 : `단절점과 단절선(14675)` `소수&펠린드롬(1747)` `문자열 폭발(9935)` `스터디 : 잠수함식별(2671)`
  
-### 8주차 - **`Greedy Algorithm` `Binary Search`** ❎
+### 8주차 - **`Greedy Algorithm` `Binary Search`** ✅
 
 (11월 19일)
 
-> 중반 문제 : `크게 만들기(2812)` `피자굽기(1756)` `풍선공장(15810)` `스터디 : --`
+> 중반 문제 : `크게 만들기(2812)` `피자굽기(1756)` `풍선공장(15810)` `스터디 : 신입사원(1946)`
 
-> 상반 문제 : `크게 만들기(2812)` `중량제한(1939)` `단어 수학(1339)` `스터디 : --`
+> 상반 문제 : `크게 만들기(2812)` `중량제한(1939)` `단어 수학(1339)` `스터디 : 배(1092)`
 
 
-### 9주차 - **`Greedy Algorithm` `Binary Search`** ❎
+### 9주차 - **`Greedy Algorithm` `Binary Search`** ✅
 
- (11월 26일)
+(11월 26일)
 
-### 10주차 - **`종합`** ❎
+> 중반 문제 : `강의실 배정(11000)` `통나무 건너뛰기(11497)` `용돈관리(6236)` `스터디 : 먹을 것인가 먹힐 것인가(7795)`
+
+> 상반 문제 : `강의실 배정(11000)` `용액(2467` `용돈관리(6236)` `스터디 : 먹을 것인가 먹힐 것인가(7795)`
+
+### 10주차 - **`종합`** ✅
 
 (12월 3일) 
 
+> 문제 : `맥주 마시면서 걸어가기(9205)` `퇴사(15486)` `가르침(1062)` `스터디 : 연구소(14502)`
 
-### 지금까지 푼 문제 
 
-[1167](https://www.acmicpc.net/problem/1167)
-[1256](https://www.acmicpc.net/problem/1256)
-[1405](https://www.acmicpc.net/problem/1405)
-[1495](https://www.acmicpc.net/problem/1495)
-[1520](https://www.acmicpc.net/problem/1520)
-[1600](https://www.acmicpc.net/problem/1600)
-[1743](https://www.acmicpc.net/problem/1743)
-[1747](https://www.acmicpc.net/problem/1747)
-[1926](https://www.acmicpc.net/problem/1926)
-[1958](https://www.acmicpc.net/problem/1958)
-[2023](https://www.acmicpc.net/problem/2023)
-[2234](https://www.acmicpc.net/problem/2234)
-[2251](https://www.acmicpc.net/problem/2251)
-[2407](https://www.acmicpc.net/problem/2407)
-[2671](https://www.acmicpc.net/problem/2671)
-[3613](https://www.acmicpc.net/problem/3613)
-[4811](https://www.acmicpc.net/problem/4811)
-[5052](https://www.acmicpc.net/problem/5052)
-[5525](https://www.acmicpc.net/problem/5525)
-[5557](https://www.acmicpc.net/problem/5557)
-[5567](https://www.acmicpc.net/problem/5567)
-[5582](https://www.acmicpc.net/problem/5582)
-[5639](https://www.acmicpc.net/problem/5639)
-[7570](https://www.acmicpc.net/problem/7570)
-[9252](https://www.acmicpc.net/problem/9252)
-[9328](https://www.acmicpc.net/problem/9328)
-[9372](https://www.acmicpc.net/problem/9372)
-[9655](https://www.acmicpc.net/problem/9655)
-[9935](https://www.acmicpc.net/problem/9935)
-[10164](https://www.acmicpc.net/problem/10164)
-[12869](https://www.acmicpc.net/problem/12869)
-[14002](https://www.acmicpc.net/problem/14002)
-[14675](https://www.acmicpc.net/problem/14675)
-[17135](https://www.acmicpc.net/problem/17135)
-[19238](https://www.acmicpc.net/problem/19238)
 
-> `실버 5 : 2문제` `실버 4 : 0문제` `실버 3 : 1문제` `실버 2 : 2문제` `실버 1 : 7문제`
 
-> `골드 5 : 10문제` `골드 4 : 8문제` `골드 3 : 3문제` `골드 2 : 0문제` `골드 1 : 1문제`
 
 
 ---
